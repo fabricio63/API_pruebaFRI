@@ -55,7 +55,12 @@ Se ejecuta el comando para descargar la imagen desde DockerHub:
 
 - sudo docker pull fabricio2000gjuarez/pythonapp:latest
 
-#### 3
+### 2 
+Se ejecuta el siguiente comando para levantar el contenedor en la maquina local:
+
+- sudo docker run -d -it -p 80:80 fabricio2000gjuarez/pythonapp:latest 
+
+### 3
 
 Para comprobar el correcto funcionamiento de la aplicacion se debe ir a su browser e ingresar a localhost:80/home donde se podra ver la aplicacion demo con una interfaz grafica 
 
