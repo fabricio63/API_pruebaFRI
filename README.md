@@ -15,8 +15,8 @@ Las fuentes de búsqueda pueden incluir servicios REST y SOAP e inicialmente est
 pueden incluirse en la solución:
 
 - https://itunes.apple.com/search?term=jack+johnson
-    -canciones
-    -películas
+    - canciones
+    - películas
 
 
   documentación del servicio
