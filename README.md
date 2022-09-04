@@ -32,7 +32,7 @@ pueden incluirse en la solución:
 - Código fuente
 - Documentación de API
 - Documento que explique cómo realizar la prueba asumiendo que se realizará la misma en un
-- ambiente linux limpio, es decir, sin ningun paquete específico para desarrollar o correr aplicaciones,
+  ambiente linux limpio, es decir, sin ningun paquete específico para desarrollar o correr aplicaciones,
   por lo tanto deben incluirse dependencias y versiones específicas si se requiere
  
 ## Evaluación
