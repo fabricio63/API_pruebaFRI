@@ -25,7 +25,8 @@ pueden incluirse en la solución:
 
 - http://www.tvmaze.com/api
   - shows de televisión
-  - http://www.crcind.com/csp/samples/SOAP.Demo.cls
+  
+- http://www.crcind.com/csp/samples/SOAP.Demo.cls
   - personas
 
 ## Entregables
