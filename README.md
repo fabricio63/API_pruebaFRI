@@ -34,3 +34,10 @@ pueden incluirse en la solución:
 - Documento que explique cómo realizar la prueba asumiendo que se realizará la misma en un
 - ambiente linux limpio, es decir, sin ningun paquete específico para desarrollar o correr aplicaciones,
   por lo tanto deben incluirse dependencias y versiones específicas si se requiere
+ 
+## Evaluación
+Se evaluarán los siguientes puntos
+  - Nivel de abstracción
+  - Separation of Concerns
+  - Respuestas del servicio
+  - Documentación
