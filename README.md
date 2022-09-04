@@ -45,16 +45,18 @@ Se evaluarán los siguientes puntos
 
 ## Instrucciones para correr el API
 
+### Requisitos para poder ejecutar la apliacion
+
+  - Se debe tener docker instalado en una maquina linux basado en una arquitectura intel (la aplicacion no puede ser ejecutada en una computadora con arquitectura ARM)
+  - Se debe tener el docker daemon inicializado, posteriormente solo se debe seguir los siguientes comandos para ser ejecutada
+  
 ### 1
 Se ejecuta el comando para descargar la imagen desde DockerHub:
 
 - sudo docker pull fabricio2000gjuarez/pythonapp:latest
 
-## 2 
-Se ejecuta el siguiente comando para levantar el contenedor en la maquina local:
+#### 3
 
-- sudo docker run -d -it -p 80:80 fabricio2000gjuarez/pythonapp:latest 
+Para comprobar el correcto funcionamiento de la aplicacion se debe ir a su browser e ingresar a localhost:80/home donde se podra ver la aplicacion demo con una interfaz grafica 
 
-## 3
 
-Para comprobar el correcto funcionamiento de la aplicacion se debe ir a su browser e ingresar a localhost:80/home donde se podra ver una aplicacion demo
