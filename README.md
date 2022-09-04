@@ -45,7 +45,7 @@ Se evaluarán los siguientes puntos
 
 ## Instrucciones para correr el API
 
-### Requisitos para poder ejecutar la apliacion
+### Requisitos para poder ejecutar la aplicacion
 
   - Se debe tener docker instalado en una maquina linux basado en una arquitectura intel (la aplicacion no puede ser ejecutada en una computadora con arquitectura ARM)
   - Se debe tener el docker daemon inicializado, posteriormente solo se debe seguir los siguientes comandos para ser ejecutada
