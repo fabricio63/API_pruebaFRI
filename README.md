@@ -20,7 +20,7 @@ pueden incluirse en la solución:
 
 
   documentación del servicio
-  https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearch API/Searching.html#//apple_ref/doc/uid/TP40017632-CH5-SW1
+  https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html#//apple_ref/doc/uid/TP40017632-CH5-SW1
 
 
 - http://www.tvmaze.com/api
@@ -28,7 +28,7 @@ pueden incluirse en la solución:
   - http://www.crcind.com/csp/samples/SOAP.Demo.cls
   - personas
 
-#Entregables
+## Entregables
 - Código fuente
 - Documentación de API
 - Documento que explique cómo realizar la prueba asumiendo que se realizará la misma en un
