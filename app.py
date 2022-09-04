@@ -1,19 +1,19 @@
 
+#librerias a utilizar
 import requests
 from flask import Flask, render_template,request
-# input text
-inp ='ariana grande'
 
 
+#funcion que se utiliza para ir a buscar al Itunes API
 def apple_API_search(inp):
 
-    #results dictionary
+    #lista de resultados
     results_appleAPI = []
-    #request to Itunes API
+    #request al Itunes API
     URL = "https://itunes.apple.com/search?term={}".format(inp.replace(" ","+"))
     page = requests.get(URL)
 
-    #extracting relevant data
+    #iteracion sobre listado de resultados y se saca la informacion relevante (nombre del artista, nombre de la cancion o show, y el tipo)
     for i in page.json()['results']:
         
         var = {'track_name': i['trackName'], 'artistName': i['artistName'],'kind': i['kind']}
@@ -22,13 +22,13 @@ def apple_API_search(inp):
 
 
 
-
+    
     return results_appleAPI
 
 
 
 
-
+#funcion que se utiliza para ir a buscar al API de TVmaze
 def TVmaze_API_search(inp):
     #results dictionary
     results_TVmazeAPI = []
@@ -38,11 +38,13 @@ def TVmaze_API_search(inp):
     #request to Itunes API
     URL = "https://api.tvmaze.com/search/people?q={}".format(inp.replace(' ','+')) + "&embed=castcredits"
     page = requests.get(URL)
-
+    #resultado se retorna en forma de lista con un elemento aqui se convierte a json y se agarra ese unico elemento en la lista
     page = page.json()[0]
-
+    #se encuentra el id unico que esa persona tiene dentro del API de TVmaze
     id_artista = page['person']['id']
-
+    
+    
+    #request para encontrar todos los shows donde ese artista ha aparecido
 
     URL1 = "https://api.tvmaze.com/people/{}?embed=castcredits".format(id_artista)
 
@@ -54,7 +56,7 @@ def TVmaze_API_search(inp):
 
 
 
-
+    #iteracion sobre resultados para extraer la informacion relevante de cada item (nombre del show, artista)
     for i in raw_data:
     
         link_var = i['_links']['show']['href']
@@ -70,19 +72,23 @@ def TVmaze_API_search(inp):
     return results_TVmazeAPI
 
 
-
+#declaracion de la creacion del API 
 app = Flask(__name__)
 
+#ruta principal
 @app.route('/home', methods =['GET', 'POST'])
 def home():
     if request.method=='POST':
+        #se recibe el nombre del artista desde el form en html
         artist_name = request.form['artist_search']   
         TVmaze_results = []
         apple_results = []
+        #se intenta hacer un call a la funcion de TVmaze con el nombre que se recibio como query 
         try:
             TVmaze_results = TVmaze_API_search(artist_name) 
         except:
             pass
+        #se intenta hacer un call a la funcion de Itunes API con el nombre que se recibio como query 
         try:
             apple_results = apple_API_search(artist_name)  
         except:
@@ -95,4 +101,5 @@ def home():
         return render_template('search.html')
     
 if __name__ == "__main__":
+    #se levanta el API para poder ser utilizado
     app.run(debug=True)
